@@ -1,8 +1,14 @@
 <h1>Articles</h1>
 <ul>
+<%# list of all articles submmited %>
   <% @articles.each do |a| %>
     <li>
     <%= link_to(a.title, a)%>
     </li>
   <% end %>
 </ul>
+
+<div>
+<%# link to add new articles %>
+<%= link_to "New Article", new_article_path%>
+</div>

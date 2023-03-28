@@ -1,3 +1,11 @@
 <h1><%= @article.title%></h1>
 
 <p><%= @article.body%></p>
+
+<div>
+ <%= link_to "Edit #{@article.title}", edit_article_path(@article)%>
+</div>
+
+<div>
+ <%= link_to "Home", root_path%>
+</div>
