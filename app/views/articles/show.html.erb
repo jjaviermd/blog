@@ -2,10 +2,21 @@
 
 <p><%= @article.body%></p>
 
-<div>
- <%= link_to "Edit #{@article.title}", edit_article_path(@article)%>
-</div>
 
-<div>
- <%= link_to "Home", root_path%>
-</div>
+<ul>
+  <li><%= link_to "Home", root_path%></li>
+  <li><%= link_to "Edit #{@article.title}", edit_article_path(@article)%></li>
+  <li><%= link_to "Erase #{@article.title}", article_path(@article),
+    data: {
+     turbo_method: :delete,
+     turbo_confirm: "Are you sure?"
+    } %> </li>
+</ul>
+
+<h2>comments</h2>
+<%= render @article.comments %>
+
+
+
+<h2>Add comment</h2>
+<%= render "comments/form" %>
